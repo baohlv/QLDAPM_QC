@@ -34,10 +34,6 @@ Copy file `env.test` thành `.env` (nếu cần) và cập nhật thông tin:
 
 ### 3. Chạy Tests
 
-#### Chạy toàn bộ tests
-```bash
-npm test
-```
 
 #### Chạy theo chức năng (Modules)
 
@@ -55,13 +51,13 @@ npm test
 
 ```bash
 # UI Mode (Giao diện trực quan của Playwright)
-npm run test:ui
+npm run test-name:ui
 
 # Headed Mode (Mở trình duyệt khi chạy)
-npm run test:headed
+npm run test-name:headed
 
 # Debug Mode
-npm run test:debug
+npm run test-name:debug
 ```
 
 ## 📁 Cấu Trúc Thư Mục Test (`tests/e2e`)
