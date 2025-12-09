@@ -32,12 +32,6 @@ npm run setup
 
 Copy file `env.test` thành `.env` (nếu cần) và cập nhật thông tin:
 
-```env
-FRONTEND_URL=http://localhost:3000
-BACKEND_URL=http://localhost:8080
-...
-```
-
 ### 3. Chạy Tests
 
 #### Chạy toàn bộ tests
