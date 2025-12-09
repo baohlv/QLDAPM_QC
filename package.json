@@ -1,0 +1,81 @@
+{
+    "name": "mini-apartment-automation-tests",
+    "version": "1.0.0",
+    "description": "Playwright automation tests for Mini Apartment Management System",
+    "scripts": {
+        "test": "npx playwright test",
+        "test:headed": "npx playwright test --headed",
+        "test:ui": "npx playwright test --ui",
+        "test:debug": "npx playwright test --debug",
+        "test:auth": "npx playwright test tests/e2e/auth/",
+        "test:api": "npx playwright test tests/e2e/api/",
+        "test:apartment": "npx playwright test tests/e2e/apartment/",
+        "test:integration": "npx playwright test tests/integration/",
+        "test:mobile": "npx playwright test --project='Mobile Chrome'",
+        "test:firefox": "npx playwright test --project=firefox",
+        "test:webkit": "npx playwright test --project=webkit",
+        "test:chromium": "npx playwright test --project=chromium",
+        "report": "npx playwright show-report",
+        "report:allure": "allure generate allure-results --clean && allure open",
+        "install:browsers": "npx playwright install",
+        "install:deps": "npx playwright install-deps",
+        "setup": "npm run install:browsers && npm run install:deps",
+        "clean": "rm -rf test-results npx playwright-report allure-results allure-report",
+        "clean:win": "rmdir /s /q test-results npx playwright-report allure-results allure-report",
+        "docker:up": "docker-compose up -d",
+        "docker:down": "docker-compose down",
+        "docker:logs": "docker-compose logs -f",
+        "health:check": "node scripts/health-check.js",
+        "test:performance": "npx playwright test --grep='Performance'",
+        "test:accessibility": "npx playwright test --grep='Accessibility'",
+        "test:security": "npx playwright test --grep='Security'",
+        "test:room-management": "npx playwright test tests/e2e/room-management/",
+        "test:pagination": "npx playwright test tests/e2e/room-management/pagination.spec.js",
+        "test:room-api": "npx playwright test tests/e2e/api/room-management.api.spec.js",
+        "test:billing": "npx playwright test tests/e2e/hoa-don/",
+        "test:billing:create": "npx playwright test tests/e2e/hoa-don/hdcntt-create.spec.js",
+        "test:billing:edit": "npx playwright test tests/e2e/hoa-don/hdcntt-edit.spec.js",
+        "test:billing:delete": "npx playwright test tests/e2e/hoa-don/hdcntt-delete.spec.js",
+        "test:billing:view": "npx playwright test tests/e2e/hoa-don/hdcntt-view.spec.js",
+        "test:billing:ui": "npx playwright test tests/e2e/hoa-don/ --ui",
+        "test:billing:headed": "npx playwright test tests/e2e/hoa-don/ --headed",
+        "test:billing:payment": "npx playwright test tests/e2e/thanh-toan/",
+        "test:billing:debt": "npx playwright test tests/e2e/bao-cao/hdcntt-debt.spec.js",
+        "test:auth:register":"npx playwright test tests/e2e/auth/register.spec.js",
+        "test:auth:login": "npx playwright test tests/e2e/auth/login.spec.js",
+        "test:rabc" :"npx playwright test tests/e2e/rbac/access-control.spec.js",
+        "generate:tests": "node scripts/generate-tests.js",
+        "generate:help": "node scripts/generate-tests.js --help"
+    },
+    "keywords": [
+        "playwright",
+        "automation",
+        "testing",
+        "e2e",
+        "api",
+        "apartment",
+        "management"
+    ],
+    "author": "Test Automation Team",
+    "license": "MIT",
+    "devDependencies": {
+        "@npx playwright/test": "^1.40.0",
+        "npx playwright": "^1.40.0",
+        "allure-npx playwright": "^2.10.0",
+        "dotenv": "^16.3.1"
+    },
+    "dependencies": {
+        "pg": "^8.11.3"
+    },
+    "engines": {
+        "node": ">=18.0.0"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/your-org/mini-apartment-tests.git"
+    },
+    "bugs": {
+        "url": "https://github.com/your-org/mini-apartment-tests/issues"
+    },
+    "homepage": "https://github.com/your-org/mini-apartment-tests#readme"
+}

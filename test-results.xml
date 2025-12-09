@@ -1,0 +1,48 @@
+<testsuites id="" name="" tests="1" failures="1" skipped="0" errors="0" time="69.60138400000001">
+<testsuite name="e2e\rbac\access-control.spec.js" timestamp="2025-12-03T07:59:04.911Z" hostname="chromium" tests="1" failures="1" skipped="0" time="65.788" errors="0">
+<testcase name="RBAC - Edge Cases &amp; Security Boundaries › RBAC_EDGE_1: Kiểm tra truy cập với session token đã expired" classname="e2e\rbac\access-control.spec.js" time="65.788">
+<failure message="access-control.spec.js:325:13 RBAC_EDGE_1: Kiểm tra truy cập với session token đã expired" type="FAILURE">
+<![CDATA[  [chromium] › e2e\rbac\access-control.spec.js:325:13 › RBAC - Edge Cases & Security Boundaries › RBAC_EDGE_1: Kiểm tra truy cập với session token đã expired 
+
+    Test timeout of 60000ms exceeded while running "beforeEach" hook.
+
+      313 |     // =============================================================================
+      314 |     test.describe('RBAC - Edge Cases & Security Boundaries', () => {
+    > 315 |     test.beforeEach(async ({ page }) => {
+          |          ^
+      316 |         await page.goto('/login');
+      317 |         await page.fill('input[id="username"]', process.env.TEST_USER_EMAIL || '');
+      318 |         await page.fill('input[id="password"]', process.env.TEST_USER_PASSWORD || '');
+        at E:\2210207\2526\251\3.QLDAPM\project\qc\tests\e2e\rbac\access-control.spec.js:315:10
+
+    Error: page.goto: Test timeout of 60000ms exceeded.
+    Call log:
+      - navigating to "https://qldapm-zeta.vercel.app/login", waiting until "load"
+
+
+      314 |     test.describe('RBAC - Edge Cases & Security Boundaries', () => {
+      315 |     test.beforeEach(async ({ page }) => {
+    > 316 |         await page.goto('/login');
+          |                    ^
+      317 |         await page.fill('input[id="username"]', process.env.TEST_USER_EMAIL || '');
+      318 |         await page.fill('input[id="password"]', process.env.TEST_USER_PASSWORD || '');
+      319 |         await page.click('button[type="submit"]');
+        at E:\2210207\2526\251\3.QLDAPM\project\qc\tests\e2e\rbac\access-control.spec.js:316:20
+
+    attachment #1: video (video/webm) ──────────────────────────────────────────────────────────────
+    ..\test-results\e2e-rbac-access-control-RB-ab5c9-ới-session-token-đã-expired-chromium\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\test-results\e2e-rbac-access-control-RB-ab5c9-ới-session-token-đã-expired-chromium\error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\e2e-rbac-access-control-RB-ab5c9-ới-session-token-đã-expired-chromium\video.webm]]
+
+[[ATTACHMENT|test-results\e2e-rbac-access-control-RB-ab5c9-ới-session-token-đã-expired-chromium\error-context.md]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+</testsuites>

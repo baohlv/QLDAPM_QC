@@ -1,0 +1,75 @@
+services:
+  # 1️⃣ PostgreSQL
+  postgres-db:
+    image: postgres:17-alpine
+    container_name: postgres-db
+    environment:
+      POSTGRES_DB: localhost_mini_apartment
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 123456
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  # 2️⃣ Redis
+  redis:
+    image: redis:7-alpine
+    container_name: redis
+    ports:
+      - "6379:6379"
+    command: ["redis-server", "--requirepass", "foobared"]
+    volumes:
+      - redis_data:/data
+    depends_on:
+      - postgres-db
+
+  # 3️⃣ Backend (Spring Boot)
+  backend:
+    image: danhcoder23072004/mini-apartment-be:latest
+    container_name: mini-apartment-be
+    ports:
+      - "8080:8080"
+    environment:
+      API_VERSION: v1
+      DB_URL: jdbc:postgresql://postgres-db:5432/localhost_mini_apartment
+      DB_USER: postgres
+      DB_PASS: 123456
+      DOC_URL: http://backend:8080
+      FE_URL: http://frontend:3000
+      SECRET_KEY: 720b69673206ef2cd1eaa6eb0620f472bfaecb34fb8b5d7d38a9546fd941a164
+      EXPIRE_ACCESS_TIME: 600000
+      EXPIRE_REFRESH_TIME: 3000000
+      REDIS_URL: redis://default:foobared@redis:6379
+      REDIS_TIMEOUT: 600000
+    depends_on:
+      - postgres-db
+      - redis
+
+  # 4️⃣ Database Seeder (runs dummy_data.sql once)
+  db-seeder:
+    image: postgres:17-alpine
+    container_name: db-seeder
+    # depends_on:
+    #   - backend
+    volumes:
+      - ./dummy_data.sql:/dummy_data.sql
+    entrypoint: ["sh", "-c", "sleep 15 && psql postgresql://postgres:123456@postgres-db:5432/localhost_mini_apartment -f /dummy_data.sql"]
+    restart: "no"
+
+  # 5️⃣ Frontend (Next.js)
+  frontend:
+    image: danhcoder23072004/mini-apartment-fe:latest
+    container_name: mini-apartment-fe
+    ports:
+      - "3000:3000"
+    environment:
+      NEXTAUTH_SECRET: 720b69673206ef2cd1eaa6eb0620f472bfaecb34fb8b5d7d38a9546fd941a164
+      NEXT_PUBLIC_API_URL: http://backend:8080
+      NEXTAUTH_URL: http://frontend:3000
+    depends_on:
+      - db-seeder
+
+volumes:
+  pgdata:
+  redis_data:

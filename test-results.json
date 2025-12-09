@@ -1,0 +1,225 @@
+{
+  "config": {
+    "configFile": "E:\\2210207\\2526\\251\\3.QLDAPM\\project\\qc\\playwright.config.js",
+    "rootDir": "E:/2210207/2526/251/3.QLDAPM/project/qc/tests",
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": "E:\\2210207\\2526\\251\\3.QLDAPM\\project\\qc\\tests\\config\\global-setup.js",
+    "globalTeardown": "E:\\2210207\\2526\\251\\3.QLDAPM\\project\\qc\\tests\\config\\global-teardown.js",
+    "globalTimeout": 600000,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "reporter": [
+      [
+        "html",
+        {
+          "outputFolder": "playwright-report"
+        }
+      ],
+      [
+        "json",
+        {
+          "outputFile": "test-results.json"
+        }
+      ],
+      [
+        "junit",
+        {
+          "outputFile": "test-results.xml"
+        }
+      ],
+      [
+        "E:\\2210207\\2526\\251\\3.QLDAPM\\project\\qc\\node_modules\\allure-playwright\\dist\\index.js",
+        {
+          "detail": true,
+          "outputFolder": "allure-results",
+          "suiteTitle": false
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "quiet": false,
+    "projects": [
+      {
+        "outputDir": "E:/2210207/2526/251/3.QLDAPM/project/qc/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "E:/2210207/2526/251/3.QLDAPM/project/qc/tests",
+        "testIgnore": [
+          "**/node_modules/**",
+          "**/build/**",
+          "**/dist/**"
+        ],
+        "testMatch": [
+          "**/tests/**/*.spec.js",
+          "**/tests/**/*.test.js"
+        ],
+        "timeout": 60000
+      },
+      {
+        "outputDir": "E:/2210207/2526/251/3.QLDAPM/project/qc/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "setup",
+        "name": "setup",
+        "testDir": "E:/2210207/2526/251/3.QLDAPM/project/qc/tests",
+        "testIgnore": [
+          "**/node_modules/**",
+          "**/build/**",
+          "**/dist/**"
+        ],
+        "testMatch": [
+          "/.*\\.setup\\.js/"
+        ],
+        "timeout": 60000
+      },
+      {
+        "outputDir": "E:/2210207/2526/251/3.QLDAPM/project/qc/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "api",
+        "name": "api",
+        "testDir": "E:/2210207/2526/251/3.QLDAPM/project/qc/tests",
+        "testIgnore": [
+          "**/node_modules/**",
+          "**/build/**",
+          "**/dist/**"
+        ],
+        "testMatch": [
+          "/.*\\.api\\.spec\\.js/"
+        ],
+        "timeout": 60000
+      }
+    ],
+    "shard": null,
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.56.1",
+    "workers": 8,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "e2e\\rbac\\access-control.spec.js",
+      "file": "e2e/rbac/access-control.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "RBAC - Edge Cases & Security Boundaries",
+          "file": "e2e/rbac/access-control.spec.js",
+          "line": 314,
+          "column": 10,
+          "specs": [
+            {
+              "title": "RBAC_EDGE_1: Kiểm tra truy cập với session token đã expired",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "timedOut",
+                      "duration": 65788,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 60000ms exceeded while running \"beforeEach\" hook.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 60000ms exceeded while running \"beforeEach\" hook.\u001b[39m\n    at E:\\2210207\\2526\\251\\3.QLDAPM\\project\\qc\\tests\\e2e\\rbac\\access-control.spec.js:315:10",
+                        "location": {
+                          "file": "E:\\2210207\\2526\\251\\3.QLDAPM\\project\\qc\\tests\\e2e\\rbac\\access-control.spec.js",
+                          "column": 10,
+                          "line": 315
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 313 |\u001b[39m     \u001b[90m// =============================================================================\u001b[39m\n \u001b[90m 314 |\u001b[39m     test\u001b[33m.\u001b[39mdescribe(\u001b[32m'RBAC - Edge Cases & Security Boundaries'\u001b[39m\u001b[33m,\u001b[39m () \u001b[33m=>\u001b[39m {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 315 |\u001b[39m     test\u001b[33m.\u001b[39mbeforeEach(\u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n \u001b[90m     |\u001b[39m          \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 316 |\u001b[39m         \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(\u001b[32m'/login'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 317 |\u001b[39m         \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mfill(\u001b[32m'input[id=\"username\"]'\u001b[39m\u001b[33m,\u001b[39m process\u001b[33m.\u001b[39menv\u001b[33m.\u001b[39m\u001b[33mTEST_USER_EMAIL\u001b[39m \u001b[33m||\u001b[39m \u001b[32m''\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 318 |\u001b[39m         \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mfill(\u001b[32m'input[id=\"password\"]'\u001b[39m\u001b[33m,\u001b[39m process\u001b[33m.\u001b[39menv\u001b[33m.\u001b[39m\u001b[33mTEST_USER_PASSWORD\u001b[39m \u001b[33m||\u001b[39m \u001b[32m''\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "E:\\2210207\\2526\\251\\3.QLDAPM\\project\\qc\\tests\\e2e\\rbac\\access-control.spec.js",
+                            "column": 10,
+                            "line": 315
+                          },
+                          "message": "\u001b[31mTest timeout of 60000ms exceeded while running \"beforeEach\" hook.\u001b[39m\n\n\u001b[0m \u001b[90m 313 |\u001b[39m     \u001b[90m// =============================================================================\u001b[39m\n \u001b[90m 314 |\u001b[39m     test\u001b[33m.\u001b[39mdescribe(\u001b[32m'RBAC - Edge Cases & Security Boundaries'\u001b[39m\u001b[33m,\u001b[39m () \u001b[33m=>\u001b[39m {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 315 |\u001b[39m     test\u001b[33m.\u001b[39mbeforeEach(\u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n \u001b[90m     |\u001b[39m          \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 316 |\u001b[39m         \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(\u001b[32m'/login'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 317 |\u001b[39m         \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mfill(\u001b[32m'input[id=\"username\"]'\u001b[39m\u001b[33m,\u001b[39m process\u001b[33m.\u001b[39menv\u001b[33m.\u001b[39m\u001b[33mTEST_USER_EMAIL\u001b[39m \u001b[33m||\u001b[39m \u001b[32m''\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 318 |\u001b[39m         \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mfill(\u001b[32m'input[id=\"password\"]'\u001b[39m\u001b[33m,\u001b[39m process\u001b[33m.\u001b[39menv\u001b[33m.\u001b[39m\u001b[33mTEST_USER_PASSWORD\u001b[39m \u001b[33m||\u001b[39m \u001b[32m''\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at E:\\2210207\\2526\\251\\3.QLDAPM\\project\\qc\\tests\\e2e\\rbac\\access-control.spec.js:315:10\u001b[22m"
+                        },
+                        {
+                          "location": {
+                            "file": "E:\\2210207\\2526\\251\\3.QLDAPM\\project\\qc\\tests\\e2e\\rbac\\access-control.spec.js",
+                            "column": 20,
+                            "line": 316
+                          },
+                          "message": "Error: page.goto: Test timeout of 60000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"https://qldapm-zeta.vercel.app/login\", waiting until \"load\"\u001b[22m\n\n\n\u001b[0m \u001b[90m 314 |\u001b[39m     test\u001b[33m.\u001b[39mdescribe(\u001b[32m'RBAC - Edge Cases & Security Boundaries'\u001b[39m\u001b[33m,\u001b[39m () \u001b[33m=>\u001b[39m {\n \u001b[90m 315 |\u001b[39m     test\u001b[33m.\u001b[39mbeforeEach(\u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 316 |\u001b[39m         \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(\u001b[32m'/login'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                    \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 317 |\u001b[39m         \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mfill(\u001b[32m'input[id=\"username\"]'\u001b[39m\u001b[33m,\u001b[39m process\u001b[33m.\u001b[39menv\u001b[33m.\u001b[39m\u001b[33mTEST_USER_EMAIL\u001b[39m \u001b[33m||\u001b[39m \u001b[32m''\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 318 |\u001b[39m         \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mfill(\u001b[32m'input[id=\"password\"]'\u001b[39m\u001b[33m,\u001b[39m process\u001b[33m.\u001b[39menv\u001b[33m.\u001b[39m\u001b[33mTEST_USER_PASSWORD\u001b[39m \u001b[33m||\u001b[39m \u001b[32m''\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 319 |\u001b[39m         \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mclick(\u001b[32m'button[type=\"submit\"]'\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at E:\\2210207\\2526\\251\\3.QLDAPM\\project\\qc\\tests\\e2e\\rbac\\access-control.spec.js:316:20\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-12-03T07:59:05.888Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "E:\\2210207\\2526\\251\\3.QLDAPM\\project\\qc\\test-results\\e2e-rbac-access-control-RB-ab5c9-ới-session-token-đã-expired-chromium\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "E:\\2210207\\2526\\251\\3.QLDAPM\\project\\qc\\test-results\\e2e-rbac-access-control-RB-ab5c9-ới-session-token-đã-expired-chromium\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "E:\\2210207\\2526\\251\\3.QLDAPM\\project\\qc\\tests\\e2e\\rbac\\access-control.spec.js",
+                        "column": 10,
+                        "line": 315
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "828f9252fa1434b7ede3-267e2193e5a57d661516",
+              "file": "e2e/rbac/access-control.spec.js",
+              "line": 325,
+              "column": 13
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2025-12-03T07:59:02.726Z",
+    "duration": 69601.384,
+    "expected": 0,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  }
+}
